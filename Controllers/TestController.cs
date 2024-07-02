@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HNG_backend_stage_one.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class HelloController(IHttpClientFactory httpClientFactory, IConfiguration configuration) : ControllerBase
 {
     private readonly IHttpClientFactory httpClientFactory = httpClientFactory;
