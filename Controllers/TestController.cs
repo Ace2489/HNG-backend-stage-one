@@ -13,7 +13,7 @@ public class HelloController(IHttpClientFactory httpClientFactory, IConfiguratio
     private readonly IConfiguration configuration = configuration;
 
     [HttpGet]
-    public async Task<IActionResult> Hello([FromQuery] string visitor)
+    public async Task<IActionResult> Hello([FromQuery] string visitor_name)
     {
 
         string ipAddress = GetIPAddress();
@@ -36,7 +36,7 @@ public class HelloController(IHttpClientFactory httpClientFactory, IConfiguratio
         {
             client_ip = ipAddress,
             location,
-            greeting = $"Hello, {visitor}!, the temperature is {temperature.Temp} degrees celsius in {location}"
+            greeting = $"Hello, {visitor_name}!, the temperature is {temperature.Temp} degrees celsius in {location}"
         });
     }
 
