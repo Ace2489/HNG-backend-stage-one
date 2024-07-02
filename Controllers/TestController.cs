@@ -6,9 +6,11 @@ namespace HNG_backend_stage_one.Controllers;
 [Route("[controller]")]
 public class HelloController : ControllerBase
 {
-    [HttpGet("hello")]
+    [HttpGet]
     public IActionResult Hello([FromQuery] string visitor)
     {
-       return Ok();
+        string queryString = visitor;
+
+        return Ok(new { Message = string.Format("Hello, {0}", visitor)});
     }
 }
