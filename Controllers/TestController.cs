@@ -4,12 +4,10 @@ namespace HNG_backend_stage_one.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class TestController(ILogger<TestController> logger) : ControllerBase
+public class HelloController : ControllerBase
 {
-    private readonly ILogger<TestController> _logger = logger;
-
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IActionResult Get()
+    [HttpGet("hello")]
+    public IActionResult Hello([FromQuery] string visitor)
     {
        return Ok();
     }

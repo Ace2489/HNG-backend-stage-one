@@ -1,0 +1,6 @@
+[build]
+builder = "nixpacks"
+buildCommand = "dotnet publish HNG-backend-stage-one.csproj -c Release -o out"
+
+[deploy]
+startCommand = "dotnet out/HNG-backend-stage-one.dll"
